@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<div th:replace="fragments :: page-header"></div>
+
+
+<form th:object="${activity}" style="max-width:600px;">
+    <fieldset>
+
+        <label th:for="eSubject">Subject</label>
+        <div class="checkboxes">
+            <p><input type="checkbox" name="subject" value="Math"/>Math</p>
+            <p><input type="checkbox" name="subject" value="Literacy"/>Literacy</p>
+            <p><input type="checkbox" name="subject" value="Social"/>Social</p>
+            <p><input type="checkbox" name="subject" value="GrossMotor"/>Gross Motor</p>
+            <p><input type="checkbox" name="subject" value="FineMotor"/>Fine Motor</p>
+            <p><input type="checkbox" name="subject" value="Science"/>Science</p>
+            <p><input type="checkbox" name="subject" value="Health"/>Health</p>
+            <p><input type="checkbox" name="subject" value="SelfCare"/>Self Care</p>
+            <p><input type="checkbox" name="subject" value="All"/>All</p>
+
+    </div>
+    </fieldset>
+
+    <fieldset>
+
+           <label th:for="eAges">Ages</label>
+       <div class = "checkboxes">
+           <p><input type="checkbox" name="ages" value="Infant"/>Infant</p>
+           <p><input type="checkbox" name="ages" value="Toddler"/>Toddler</p>
+           <p><input type="checkbox" name="ages" value="Two"/>Two</p>
+           <p><input type="checkbox" name="ages" value="Pre-K"/>Pre-K</p>
+           <p><input type="checkbox" name="ages" value="All"/>All</p>
+
+   </div>
+    </fieldset>
+
+    <fieldset>
+            <label th:for="eWhere">When or Where</label>
+            <div class = "checkboxes">
+            <p><input type="checkbox" name="where" value="Mealtime"/>Mealtime</p>
+            <p><input type="checkbox" name="where" value="Bedtime"/>Bedtime</p>
+            <p><input type="checkbox" name="where" value="Bathtime"/>Bathtime</p>
+            <p><input type="checkbox" name="where" value="Grocery"/>Grocery Store</p>
+            <p><input type="checkbox" name="where" value="Laundromat"/>Laundromat</p>
+            <p><input type="checkbox" name="where" value="Doctor"/>Doctor's Office</p>
+            <p><input type="checkbox" name="where" value="Car-Bus-Metro"/>Car/Bus/Metro</p>
+            <p><input type="checkbox" name="where" value="HairSalon"/>Hair Salon</p>
+            <p><input type="checkbox" name="where" value="Cooking"/>Cooking</p>
+            <p><input type="checkbox" name="where" value="All"/>All</p>
+
+
+
+        </div>
+
+    <input type = "submit" value="Search for activities" />
+    </fieldset>
+
+    <!-- age and when/where -->
+
+
+</form>
+
+</body>
+</html>

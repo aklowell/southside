@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,14 +23,14 @@ public class ActivityController {
 
     //Request path: /index - for teachers & admins only
     //from here they add, edit and delete
-    @RequestMapping(value= "")
+    @RequestMapping(value = "")
     public String index(Model model) {
         model.addAttribute("activities", activityDao.findAll());
         model.addAttribute("title", "Activity List");
         return "activity/index";
     }
 
-    @RequestMapping(value="add", method= RequestMethod.GET)
+    @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddActivityForm(Model model) {
         model.addAttribute("title", "Add Activity");
         model.addAttribute(new Activity());
@@ -37,7 +38,7 @@ public class ActivityController {
         return "activity/add";
     }
 
-    @RequestMapping(value="add", method=RequestMethod.POST)
+    @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddActivityForm(@ModelAttribute @Valid Activity newActivity, Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Activity");
@@ -48,5 +49,15 @@ public class ActivityController {
         activityDao.save(newActivity);
 
         return "redirect:/activity";
+    }
+
+    @RequestMapping(value = "detail/{id}", method = RequestMethod.GET)
+    public String displayDetailsForm(@PathVariable int id, Model model) {
+        Activity displayActivity = activityDao.findOne(id);
+        model.addAttribute("name", displayActivity.geteName());
+        model.addAttribute("activityId", activityDao.findOne(id));
+        model.addAttribute(displayActivity);
+
+        return "activity/detail";
     }
 }

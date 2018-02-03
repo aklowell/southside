@@ -1,9 +1,10 @@
 package com.example.southside.models;
 
 
-import javafx.scene.control.DatePicker;
+import com.example.southside.models.data.ActivityDao;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -236,4 +237,51 @@ public class Activity {
     public int getId() {
         return id;
     }
+
+    //put methods here - turn off for now
+
+
+ /*     Activity one = new Activity();
+        model.addAttribute("activities", activityDao.findAll());
+      for (Activity one : all) {
+            if (one.geteSubject().equalsIgnoreCase("Literacy")) {
+                activities.add(one);
+                model.addAttribute(activities);
+            }
+
+        }
+        return "search/results";
+}*/
+
+    /*
+   public static Activity instance;
+
+    public static Activity getInstance() {
+        if(instance==null) {
+            instance = new Activity();
+        }
+        return instance;
+    }
+
+   private List<Activity> activities = new ArrayList<>();
+
+  /*   public Activity findById(int id) {
+        for (Activity activity : activities) {
+            if (activity.getId() == id)
+                return activity;
+        }
+        return null;
+    }
+    public List<Activity> findAll() {return activities;}
+
+    public List<Activity> findBySubject(String subjName) {
+
+        List<Activity> matchingActivities = new ArrayList<>();
+
+        for (Activity activity : activities) {
+            if (activity.geteSubject().contains(subjName))
+                matchingActivities.add(activity);
+        }
+        return matchingActivities;
+    }  */
 }
