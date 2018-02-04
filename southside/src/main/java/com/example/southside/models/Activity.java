@@ -44,7 +44,7 @@ public class Activity {
     private String linkVideo;
 
 
- //TODO should skill be enum or class, to put in a list?
+    //TODO should skill be enum or class, to put in a list?
     private String eSkill;
 
     private String sSkill;
@@ -59,11 +59,14 @@ public class Activity {
 
     private String sRelevance;
 
-    public Activity() {}
+    public Activity() {
+    }
 
-    public Activity(String eName, String sName) {
+    public Activity(String eName, String sName, String eSubject, String sSubject) {
         this.eName = eName;
         this.sName = sName;
+        this.eSubject = eSubject;
+        this.sSubject = sSubject;
     }
 
     public String geteName() {
@@ -238,6 +241,30 @@ public class Activity {
         return id;
     }
 
+    //TRYING THIS - NEED HELP
+
+    public void add(Activity activity) {
+        activity.add(activity);
+    }
+
+    private ArrayList<Activity> activities = new ArrayList<>();
+
+    public ArrayList<Activity> findAll() {
+        return activities;
+    }
+
+    public ArrayList<Activity> findBySubject(String subject) {
+        ArrayList<Activity> matchingActivities = new ArrayList<>();
+        for (Activity activity : activities) {
+            if (activity.geteSubject().contains(subject))
+                matchingActivities.add(activity);
+            }
+            return matchingActivities;
+        }
+
+
+
+
     //put methods here - turn off for now
 
 
@@ -253,7 +280,7 @@ public class Activity {
         return "search/results";
 }*/
 
-    /*
+
    public static Activity instance;
 
     public static Activity getInstance() {
@@ -263,15 +290,19 @@ public class Activity {
         return instance;
     }
 
+}
+
+/*
    private List<Activity> activities = new ArrayList<>();
 
-  /*   public Activity findById(int id) {
+    public Activity findById(int id) {
         for (Activity activity : activities) {
             if (activity.getId() == id)
                 return activity;
         }
         return null;
     }
+
     public List<Activity> findAll() {return activities;}
 
     public List<Activity> findBySubject(String subjName) {
@@ -284,4 +315,4 @@ public class Activity {
         }
         return matchingActivities;
     }  */
-}
+

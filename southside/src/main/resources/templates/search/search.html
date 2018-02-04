@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<h2>Search Form</h2>
+
+<div class="container body-content">
+
+
+
+    <form th:action="@{/search/results}" th:object="${searchForm}">
+        <h2>Search by:</h2>
+
+       <ul class="form-group">
+
+<li>
+                <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+           <label>Math</label>
+            </li>
+        </ul>
+
+    <!--    <div class="form-group">
+            <label th:for="keyword">Keyword</label>
+            <input class="form-control" th:field="*{keyword}" />
+        </div>  -->
+
+        <input type="submit" value="Search" />
+    </form>
+
+    <hr />
+
+    <div>
+        <div th:unless="${activities} and ${activities.size()}">
+            <h2>No Results</h2>
+        </div>
+
+
+        <div th:if="${activities} and ${activities.size()}">
+
+            <!--     <h3 th:text="${activity.eSubject} + ${activities.size() + ' Result(s)'}"></h3> -->
+
+
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Sub-Category</th>
+                    <th>Ages</th>
+                    <th>When or Where</th>
+                    <th>See details</th>
+                </tr>
+                <tr th:each="activity : ${activities}">
+                    <td th:text="${activity.eName}"></td>
+                    <td th:text="${activity.eSubject}"></td>
+                    <td th:text="${activity.eSkill}"></td>
+                    <td th:text="${activity.eAges}"></td>
+                    <td th:text="${activity.eWhere}"></td>
+                    <td><a th:href="@{'/activity/detail/' +${activity.id}}">See details</a></td>
+                </tr>
+
+            </table>
+    </div>
+
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -17,20 +17,37 @@ public class SearchForm {
 
     public int getActivityId() { return activityId; }
 
-    private String keyword;
-
-    public String getKeyword() {
-        return keyword;
+    public void setActivityId(int activityId) {
+        this.activityId = activityId;
     }
 
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
-    }
 
-    public SearchForm(Activity activity, String keyword) {
+
+    public SearchForm(Activity activity, String subject) {
         this.activity=activity;
-        this.keyword=keyword;
+        this.subject=subject;
     }
+
+
+
+    //ADAPTED FROM TECHJOBS
+    private Iterable<Activity> activities;
+    public Iterable<Activity> getActivities() {return activities;}
+    public void setActivities(Iterable<Activity>activities) {this.activities = activities;}
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    private String subject;
+
 
     public SearchForm() {}
+
+
+
 }
