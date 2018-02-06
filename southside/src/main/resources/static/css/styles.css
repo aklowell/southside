@@ -216,4 +216,15 @@ th {
     columns: 4 8em;
 }
 
+/* ul in column layout*/
+ul.column {
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  height: 200px;
+}
+ul.column li {
+  flex: 1 0 25%;
+}
+
 

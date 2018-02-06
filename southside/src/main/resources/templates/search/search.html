@@ -3,6 +3,7 @@
 <head th:replace="fragments :: head">
 </head>
 <body>
+<div th:replace="fragments :: page-header"></div>
 
 <h2>Search Form</h2>
 
@@ -13,13 +14,94 @@
     <form th:action="@{/search/results}" th:object="${searchForm}">
         <h2>Search by:</h2>
 
-       <ul class="form-group">
+       <ul  class="column" style="list-style:none;">
 
-<li>
-                <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
            <label>Math</label>
             </li>
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+               <label>Literacy</label>
+           </li>
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+               <label>Social</label>
+           </li>
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+               <label>Gross Motor</label>
+           </li>
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+               <label>Fine Motor</label>
+           </li>
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+               <label>Science</label>
+           </li>
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+               <label>Health</label>
+           </li>
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+               <label>Self-Care</label>
+           </li>
+           <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+               <label>All</label>
+           </li>
         </ul>
+        <hr />
+
+        <ul  class="column" style="list-style:none;">
+
+
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Infant</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Toddler</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Two Year Old</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Pre-K</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>All</label>
+            </li>
+        </ul>
+        <hr />
+        <ul  class="column" style="list-style:none;">
+
+
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Mealtime</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Bedtime</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Bathtime</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Grocery Store</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Laundromat</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Doctor's Office</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Car-Bus-Metro</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Hair Salon</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>Cooking</label>
+            </li>
+            <li>    <input type="radio"  th:field="*{subject}" th:value="${eSubject}" th:checked="${subject == eSubject}"/>
+                <label>All</label>
+            </li>
+        </ul>
+
 
     <!--    <div class="form-group">
             <label th:for="keyword">Keyword</label>
